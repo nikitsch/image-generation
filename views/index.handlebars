@@ -1,0 +1,35 @@
+<h1 class="text-center">Image Generation AI</h1>
+
+<form action="/" method="post">
+
+  <input
+  type="text"
+  class="form-control mb-2"
+  placeholder="Enter img params..."
+  required
+  name="prompt"
+  />
+
+  <select name="size" class="form-control mb-2">
+    <option value="256x256">256x256</option>
+    <option value="512x512">512x512</option>
+    <option value="1024x1024">1024x1024</option>
+  </select>
+
+  <input 
+  type="number"
+  class="form-control mb-2"
+  value="1"
+  name="number"
+  />
+
+  <button type="submit" class="btn btn-primary">Generate</button>
+</form>
+
+{{#if images}}
+  <div class="row">
+    {{#each images}}
+      <img src="{{this.url}}" class="img-fluid rounded" />
+    {{/each}}
+  </div>
+{{/if}}
